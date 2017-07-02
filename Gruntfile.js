@@ -64,12 +64,22 @@ module.exports = function(grunt) {
             }
         },
 
+        /* Detect errors in javascript code */
+        jshint: {
+            files: ['js/*.js'],
+            options: {
+              globals: {
+                jQuery: true
+              }
+            }
+
+        },
 
         /* Auto Update the scripts and styles when working */
         watch: {
             scripts: {
                 files: ['js/*.js'],
-                tasks: ['concat', 'uglify'],
+                tasks: ['jshint', 'concat', 'uglify'],
                 options: {
                     spawn: false,
                 },
@@ -93,6 +103,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // Default task(s).
     grunt.registerTask('default', ['concat', 'uglify', 'sass', 'postcss']);
