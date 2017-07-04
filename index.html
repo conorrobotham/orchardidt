@@ -36,23 +36,22 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
+                    <a id="home" class="navbar-brand" href="#">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                         <strong></strong>
                     </a>
                 </div>
                 <div class="collapse navbar-collapse header-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#visual-senses">Visual Senses</a></li>
-                        <li><a href="#colours">Colours</a></li>
-
+                        <li><a id="visualSensesNav" href="#visualSenses">Visual Senses</a></li>
+                        <li><a id="coloursNav" href="#colours">Colours</a></li>
                     </ul>
 
                 </div>
             </div>
         </div>
 
-      <section id="visual-senses">
+      <section id="visualSenses">
         <div class="jumbotron">
           <div class="modal fade" id="panModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
             <div class="modal-dialog">
@@ -87,10 +86,10 @@
                   </div>
                   <div class="col-sm-4">
                             <div class="panel-body">
-                              <p class="lead text-muted">TASTE: A FIVE-SENSE EXPERIENCE</p>
+                              <p class="lead text-muted text-uppercase">Taste: A Five-sense Experience</p>
                               <hr>
                               <p class="text-muted">Our visual senses provide up to 28% of our taste experience. This is a theory Instagram chef Jacques la Merde takes to the extreme. Serving up exquisite tasting plates -in fact made from gas station inbgredients -to her thousands of followers, she demonstrates how visual techniques affect our perception of food</p>
-                              <p class="text-danger">FOOD THAT LOOKS ITS BEST</p>
+                              <p class="text-danger text-uppercase">Food that looks its best</p>
                               <p class="text-muted"><b>Enhance the flavour of your food by using a variety of shapes and colours to entice the eyes</b></p>
                             </div>
                   </div>
@@ -102,35 +101,32 @@
       <div class="jumbotron">
         <div class="container">
                <div class="row">
-                   <div class="center">
-                 <p class="lead text-muted">TASTE THE COLOURS</p>
-                </div>
-                 <hr>
+                 <div class="center col-sm-12">
+                   <p class="lead text-muted text-uppercase text-center">Taste the Colours</p>
+                   <hr>
+                 </div>
                  <div class="col-sm-4">
-                   <a href="html/red.html" class="btn btn-sm">
+                   <a id="redSpoon" href="#" class="btn btn-sm">
                      <img src="img/red.png" class="img-responsive" alt="Pan"></a>
                     <div class="panel-body">
-                      <p class="lead text-muted">RED</p>
-                      <hr>
-                      <p class="text-muted">Red fruit reminds us of berries and soft fruits, so we anticipate a sweet taste</p>
+                      <p class="lead text-muted">Red</p>
+                      <p class="text-muted">Red foods remind us of berries and soft fruits, so we anticipate a sweet taste</p>
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <a href="html/green.html" class="btn btn-sm">
+                    <a id="greenSpoon" href="#" class="btn btn-sm">
                       <img src="img/green.png" class="img-responsive" alt="Pan"></a>
                     <div class="panel-body">
-                      <p class="lead text-muted">GREEN</p>
-                      <hr>
+                      <p class="lead text-muted">Green</p>
                       <p class="text-muted">Fresh, zingy green colours are reminiscent of unripe fruit, promising sour or acid flavours</p>
                     </div>
                   </div>
                 <div class="col-sm-4">
-                  <a href="html/white.html" class="btn btn-sm">
+                  <a id="whiteSpoon" href="#" class="btn btn-sm">
                     <img src="img/white.png" class="img-responsive" alt="Pan"></a>
 
                           <div class="panel-body">
-                            <p class="lead text-muted">WHITE</p>
-                            <hr>
+                            <p class="lead brand-text">White</p>
                             <p class="text-muted">White foods evoke memories of salt and salty flavours, driving the expectation of a svaoury treat.</p>
                           </div>
                 </div>
@@ -168,11 +164,17 @@
             element.src = "dist/js/defer.min.js";
             document.body.appendChild(element);
         }
+        function windowLoaded(){
+          downloadJSAtOnload();
+          addListeners();
+        }
         if (window.addEventListener)
-            window.addEventListener("load", downloadJSAtOnload, false);
+            window.addEventListener("load", windowLoaded, false);
+
         else if (window.attachEvent)
-            window.attachEvent("onload", downloadJSAtOnload);
-        else window.onload = downloadJSAtOnload;
+            window.attachEvent("onload", windowLoaded);
+        else window.onload = windowLoaded;
+
         </script>
     </body>
 
